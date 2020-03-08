@@ -877,6 +877,7 @@ AC_DEFUN([CURL_SET_COMPILER_WARNING_OPTS], [
       CLANG)
         #
         if test "$want_warnings" = "yes"; then
+          tmp_CFLAGS="$tmp_CFLAGS -std=c89"
           tmp_CFLAGS="$tmp_CFLAGS -pedantic"
           tmp_CFLAGS="$tmp_CFLAGS -Wall -Wextra"
           tmp_CFLAGS="$tmp_CFLAGS -Wpointer-arith -Wwrite-strings"
@@ -951,6 +952,7 @@ AC_DEFUN([CURL_SET_COMPILER_WARNING_OPTS], [
       GNU_C)
         #
         if test "$want_warnings" = "yes"; then
+          tmp_CFLAGS="$tmp_CFLAGS -std=c89"
           #
           dnl Do not enable -pedantic when cross-compiling with a gcc older
           dnl than 3.0, to avoid warnings from third party system headers.
